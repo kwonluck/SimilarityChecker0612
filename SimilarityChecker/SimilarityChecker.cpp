@@ -10,8 +10,20 @@ public:
 		compareStringSet = { str1,str2 };
 	}
 
-	int getLegnthPoint() {
-		return 60;
+	int getLengthPoint() {
+		int gap = compareStringSet.first.length() - compareStringSet.second.length();
+
+		if (gap == 0)
+			return 60;
+
+		double denominator = 1;
+		if (gap > 0)
+			denominator = compareStringSet.second.length();
+		if (gap < 0)
+			denominator = compareStringSet.first.length();
+		
+		return (1 - (abs(gap) / denominator)) * 60;
+
 	}
 
 private:
