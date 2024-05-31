@@ -11,6 +11,11 @@ public:
 		similarityChecker.setCompareString(str1, str2);
 		return similarityChecker.getLengthPoint();
 	}
+
+	int testGeAlphaPoint(string str1, string str2) {
+		similarityChecker.setCompareString(str1, str2);
+		return similarityChecker.getAlphaPoint();
+	}
 };
 
 TEST_F(SimilarityCheckerFixture, legnthCheck1) {
@@ -29,8 +34,14 @@ TEST_F(SimilarityCheckerFixture, legnthCheck4) {
 	EXPECT_EQ(30, testGetLengthPoint("DS", "ASD"));
 }
 
-TEST_F(SimilarityCheckerFixture, alphaCheck) {
-	similarityChecker.getAlphaPoint();
-	EXPECT_EQ(1, 1);
-	EXPECT_TRUE(true);
+TEST_F(SimilarityCheckerFixture, alphaCheck1) {
+	EXPECT_EQ(40, testGeAlphaPoint("ASD", "ASD"));
+}
+
+TEST_F(SimilarityCheckerFixture, alphaCheck2) {
+	EXPECT_EQ(0, testGeAlphaPoint("A", "BB"));
+}
+
+TEST_F(SimilarityCheckerFixture, alphaCheck3) {
+	EXPECT_EQ(0, testGeAlphaPoint("AA", "EEA"));
 }
