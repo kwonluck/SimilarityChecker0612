@@ -22,7 +22,7 @@ public:
 		if (gap < 0)
 			denominator = compareStringSet.first.length();
 		
-		return (1 - (gap / denominator)) * 60;
+		return (1 - (abs(gap) / denominator)) * 60;
 
 	}
 

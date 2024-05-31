@@ -23,6 +23,16 @@ TEST(SimilarityChecker, legnthCheck2) {
 	EXPECT_EQ(30, lengthPoint);
 }
 
+TEST(SimilarityChecker, legnthCheck3) {
+	SimilarityChecker similarityChecker;
+
+	string strA = "DS";
+	string strB = "ASD";
+	similarityChecker.setCompareString(strA, strB);
+	int lengthPoint = similarityChecker.getLengthPoint();
+	EXPECT_EQ(30, lengthPoint);
+}
+
 TEST(SimilarityChecker, alphaCheck) {
 	EXPECT_EQ(1, 1);
 	EXPECT_TRUE(true);
