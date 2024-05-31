@@ -3,14 +3,24 @@
 #include <string>
 using namespace std;
 
-TEST(SimilarityChecker, legnthCheck) {	
+TEST(SimilarityChecker, legnthCheck1) {	
 	SimilarityChecker similarityChecker;
 
 	string strA = "ASD";
 	string strB = "DSA";
 	similarityChecker.setCompareString(strA, strB);
-	int lengthPoint = similarityChecker.getLegnthPoint();
+	int lengthPoint = similarityChecker.getLengthPoint();
 	EXPECT_EQ(60, lengthPoint);
+}
+
+TEST(SimilarityChecker, legnthCheck2) {
+	SimilarityChecker similarityChecker;
+
+	string strA = "ASD";
+	string strB = "DS";
+	similarityChecker.setCompareString(strA, strB);
+	int lengthPoint = similarityChecker.getLengthPoint();
+	EXPECT_EQ(30, lengthPoint);
 }
 
 TEST(SimilarityChecker, alphaCheck) {
