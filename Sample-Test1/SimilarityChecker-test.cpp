@@ -18,14 +18,19 @@ TEST_F(SimilarityCheckerFixture, legnthCheck1) {
 }
 
 TEST_F(SimilarityCheckerFixture, legnthCheck2) {
-	EXPECT_EQ(30, testGetLengthPoint("ASD", "DS"));
+	EXPECT_EQ(0, testGetLengthPoint("AS", "DESA"));
 }
 
 TEST_F(SimilarityCheckerFixture, legnthCheck3) {
+	EXPECT_EQ(30, testGetLengthPoint("ASD", "DS"));
+}
+
+TEST_F(SimilarityCheckerFixture, legnthCheck4) {
 	EXPECT_EQ(30, testGetLengthPoint("DS", "ASD"));
 }
 
 TEST_F(SimilarityCheckerFixture, alphaCheck) {
+	similarityChecker.getAlphaPoint();
 	EXPECT_EQ(1, 1);
 	EXPECT_TRUE(true);
 }
